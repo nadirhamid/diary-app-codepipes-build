@@ -7,8 +7,8 @@ application:
   import: ./resultApp.yml
 
 deployment:
-  name: VoteResultDeployment
-  description: Vote result Service Deployment
+  name: OWASPResultDeployment
+  description: OWASP result Service Deployment
   deploymentConfig:
     artifact:
       id: 3e9f0abf-c768-499d-8c46-23455622dc

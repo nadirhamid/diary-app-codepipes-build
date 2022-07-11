@@ -4,11 +4,11 @@ environment:
   import: ./env.yml
 
 application:
-  import: ./voteApp.yml
+  import: ./owaspApp.yml
 
 deployment:
-  name: VoteDeployment
-  description: Vote Service Deployment
+  name: OWASPDeployment
+  description: OWASP Service Deployment
   deploymentConfig:
     artifact:
       id: 3e9f0abf-c768-499d-8c46-577777222dc
@@ -34,4 +34,4 @@ deployment:
       certificateArn: "${terraform.certificate_arn.value}"
     summary:
       - name: Service URL
-        command: echo https://$(kubectl get ingress -n voting-app -o=jsonpath='{.items[*].metadata.annotations.external-dns\.alpha\.kubernetes\.io\/hostname}')
+        command: echo https://$(kubectl get ingress -n owasp-app -o=jsonpath='{.items[*].metadata.annotations.external-dns\.alpha\.kubernetes\.io\/hostname}')

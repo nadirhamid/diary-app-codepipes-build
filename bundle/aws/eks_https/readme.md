@@ -1,4 +1,4 @@
-Voting App with HTTPS Ingress
+OWASP App with HTTPS Ingress
 =========
 
 A simple distributed application running across multiple Docker containers.
