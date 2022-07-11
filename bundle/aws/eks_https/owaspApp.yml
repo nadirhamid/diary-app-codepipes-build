@@ -2,7 +2,7 @@ schema_version: v0.0.1
 
 application:
   name: owasp-app
-  description: vote for cat/dog
+  description: owasp for cat/dog
   appConfig:
     version: 1
   artifacts:
@@ -11,7 +11,7 @@ application:
       containerImage:
         provider: dockerhub_container_registry
         host: index.docker.io
-        repo: cldcvr/codepipes-example-vote
+        repo: cldcvr/codepipes-example-owasp
         reference: latest
   creds:
     - cloud

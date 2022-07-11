@@ -19,18 +19,17 @@ deployment:
         region:  "${terraform.cluster_region.value}"
         roleArn:  "${terraform.eks_arn.value}"
         ports:
-          -  name: "vote"
+          -  name: "owasp"
              containerPort: 80
              protocol: "TCP"
              healthCheck: "/health"
         ingress:
           - domain: codepipes.tk
             certificateArn: "$certificateArn"
-            appDomain: voting.codepipes.tk
+            appDomain: owasp.codepipes.tk
             externalDNSenabled: "true"
     env:
       PG_HOST: "${terraform.rds_instance_address.value}"
-      REDIS_HOST: "${terraform.redis_hostname.value}"
       certificateArn: "${terraform.certificate_arn.value}"
     summary:
       - name: Service URL

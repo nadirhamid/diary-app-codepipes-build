@@ -1,7 +1,7 @@
 schema_version: v0.0.1
 
 application:
-  name: voting-result
+  name: owasp-result
   description: OWASP result application details
   appConfig:
     version: 1
