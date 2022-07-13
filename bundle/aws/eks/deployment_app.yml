@@ -4,7 +4,7 @@ environment:
   import: ./env.yml
 
 application:
-  import: ./owaspApp.yml
+  import: ./journalApp.yml
 
 deployment:
   name: OWASPDeployment
@@ -19,7 +19,7 @@ deployment:
         region:  "$region"
         roleArn:  "$roleArn"
         ports:
-          -  name: "owasp"
+          -  name: "journal"
              containerPort: 80
              protocol: "TCP"
              healthCheck: "/health"
@@ -30,4 +30,4 @@ deployment:
       PG_HOST: "${terraform.rds_instance_address.value}"
     summary:
       - name: Service URL
-        command: sleep 10 ; echo http://`kubectl get ingress -n owasp-app -o=jsonpath={.items[*].status.loadBalancer.ingress[*].hostname}`
+        command: sleep 10 ; echo http://`kubectl get ingress -n journal-app -o=jsonpath={.items[*].status.loadBalancer.ingress[*].hostname}`

@@ -19,7 +19,7 @@ deployment:
         region:  "${terraform.cluster_region.value}"
         roleArn:  "${terraform.eks_arn.value}"
         ports:
-          -  name: "owasp"
+          -  name: "journal"
              containerPort: 80
              protocol: "TCP"
              healthCheck: "/health"
@@ -32,4 +32,4 @@ deployment:
       certificateArn: "${terraform.certificate_arn.value}"
     summary:
       - name: Service URL
-        command: echo https://$(kubectl get ingress -n owasp-result -o=jsonpath='{.items[*].metadata.annotations.external-dns\.alpha\.kubernetes\.io\/hostname}')
+        command: echo https://$(kubectl get ingress -n journal-result -o=jsonpath='{.items[*].metadata.annotations.external-dns\.alpha\.kubernetes\.io\/hostname}')

@@ -1,8 +1,8 @@
 schema_version: v0.0.1
 
 application:
-  name: owasp-app
-  description: owasp for cat/dog
+  name: journal-app
+  description: journal for cat/dog
   appConfig:
     version: 1
   artifacts:
@@ -11,7 +11,7 @@ application:
       containerImage:
         provider: dockerhub_container_registry
         host: index.docker.io
-        repo: cldcvr/codepipes-example-owasp
+        repo: cldcvr/codepipes-example-journal
         reference: latest
   creds:
     - cloud

@@ -25,7 +25,7 @@ Run in this directory:
 codepipes bundle plan --proj <<projid>>
 codepipes bundle apply
 ```
-The app will be running at the **appDomain** that you provided in inputs in **deployment_owasp.yaml**, and the results will be at **appDomain** provided in **deployment_result.yaml**. If the input for **appDomain** is not provided then the URLs would bt **https://<applicationName>.<domain>**.
+The app will be running at the **appDomain** that you provided in inputs in **deployment_journal.yaml**, and the results will be at **appDomain** provided in **deployment_result.yaml**. If the input for **appDomain** is not provided then the URLs would bt **https://<applicationName>.<domain>**.
 
 
 ## Environment YAML
@@ -108,13 +108,13 @@ inputs:
   region:  "${terraform.cluster_region.value}"
   roleArn:  "${terraform.eks_arn.value}"
   ports:
-    -  name: "owasp"
+    -  name: "journal"
        containerPort: 80
        protocol: "TCP"
        healthCheck: "/health"
   ingress:
     - domain: codepipes.tk
       certificateArn: "$certificateArn"
-      appDomain: owasp.codepipes.tk
+      appDomain: journal.codepipes.tk
       externalDNSenabled: "true"
 ```

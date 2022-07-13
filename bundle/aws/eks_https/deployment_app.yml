@@ -4,7 +4,7 @@ environment:
   import: ./env.yml
 
 application:
-  import: ./owaspApp.yml
+  import: ./journalApp.yml
 
 deployment:
   name: OWASPDeployment
@@ -19,18 +19,18 @@ deployment:
         region:  "${terraform.cluster_region.value}"
         roleArn:  "${terraform.eks_arn.value}"
         ports:
-          -  name: "owasp"
+          -  name: "journal"
              containerPort: 80
              protocol: "TCP"
              healthCheck: "/health"
         ingress:
           - domain: codepipes.tk
             certificateArn: "$certificateArn"
-            appDomain: owasp.codepipes.tk
+            appDomain: journal.codepipes.tk
             externalDNSenabled: "true"
     env:
       PG_HOST: "${terraform.rds_instance_address.value}"
       certificateArn: "${terraform.certificate_arn.value}"
     summary:
       - name: Service URL
-        command: echo https://$(kubectl get ingress -n owasp-app -o=jsonpath='{.items[*].metadata.annotations.external-dns\.alpha\.kubernetes\.io\/hostname}')
+        command: echo https://$(kubectl get ingress -n journal-app -o=jsonpath='{.items[*].metadata.annotations.external-dns\.alpha\.kubernetes\.io\/hostname}')
