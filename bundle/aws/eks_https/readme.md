@@ -1,4 +1,4 @@
-OWASP App with HTTPS Ingress
+Journal App with HTTPS Ingress
 =========
 
 A simple distributed application running across multiple Docker containers.

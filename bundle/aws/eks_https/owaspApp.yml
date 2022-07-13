@@ -6,7 +6,7 @@ application:
   appConfig:
     version: 1
   artifacts:
-    - name: OWASP_Container_Image
+    - name: Journal_Container_Image
       id: 3e9f0abf-c768-499d-8c46-577777222dc
       containerImage:
         provider: dockerhub_container_registry

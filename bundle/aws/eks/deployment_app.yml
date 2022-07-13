@@ -7,8 +7,8 @@ application:
   import: ./journalApp.yml
 
 deployment:
-  name: OWASPDeployment
-  description: OWASP Service Deployment
+  name: JournalDeployment
+  description: Journal Service Deployment
   deploymentConfig:
     artifact:
       id: 3e9f0abf-c768-499d-8c46-577777222dc

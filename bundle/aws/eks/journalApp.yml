@@ -1,13 +1,13 @@
 schema_version: v0.0.1
 
 application:
-  name: journal-result
-  description: OWASP result application details
+  name: journal-app
+  description: journal for cat/dog
   appConfig:
     version: 1
   artifacts:
-    - name: OWASP_Result_Container_Image
-      id: 3e9f0abf-c768-499d-8c46-23455622dc
+    - name: Journal_Container_Image
+      id: 3e9f0abf-c768-499d-8c46-577777222dc
       containerImage:
         provider: dockerhub_container_registry
         host: index.docker.io

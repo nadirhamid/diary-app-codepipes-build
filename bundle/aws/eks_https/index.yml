@@ -1,8 +1,7 @@
 schema_version: v0.0.1
 
 project:
-  name: OWASPProject
+  name: JournalProject
 
 deployments:
   - import: ./deployment_app.yml
-  - import: ./deployment_result.yml
