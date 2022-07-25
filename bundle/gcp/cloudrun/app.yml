@@ -1,0 +1,18 @@
+  
+schema_version: v0.0.1
+
+application:
+  name: cloud-run
+  description: Journal app
+  appConfig:
+    version: 1
+  artifacts:
+    - name: Cloud_Run_Sample_Container_Image
+      id: 0187DD95-2315-44E1-9209-FA0C53F9B45A
+      containerImage:
+        provider: google_container_registry
+        repo: matrixnad/diary-container 
+        reference: latest
+  creds:
+    - cloud
+    - git
