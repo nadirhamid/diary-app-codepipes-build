@@ -10,7 +10,7 @@ application:
       id: 4FE1056C-E64F-46A3-8CA3-312AA19DE732
       containerImage:
         provider: public_elastic_container_registry
-        repo: matrixnad/diary-container
+        repo: public.ecr.aws/t8r3g5k5/codepipes-diary-reference
         reference: latest
   creds:
     - cloud

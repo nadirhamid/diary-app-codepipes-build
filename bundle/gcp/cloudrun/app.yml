@@ -11,7 +11,7 @@ application:
       id: 0187DD95-2315-44E1-9209-FA0C53F9B45A
       containerImage:
         provider: google_container_registry
-        repo: matrixnad/diary-container 
+        repo: public.ecr.aws/t8r3g5k5/codepipes-diary-reference 
         reference: latest
   creds:
     - cloud
